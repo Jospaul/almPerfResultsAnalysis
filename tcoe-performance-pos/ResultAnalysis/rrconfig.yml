@@ -1,0 +1,58 @@
+# Configuration for the POS results collating utility
+
+# ALM Url
+almurl: "http://alm.jcpenney.com/qcbin"
+
+# ALM domain
+domain: "JCP"
+
+# ALM Project
+project: "MobilePOS_Stores"
+
+# Definition of SLA for transactions
+transactions:
+   MPOS_TC70_AddItem_ToBag: 2
+   MPOS_TC70_BankCardPayment: 2
+   MPOS_TC70_CustomerPhone: 2
+   MPOS_TC70_ExitApp: 2
+   MPOS_TC70_ItemAdd: 2
+   MPOS_TC70_ItemAdjusment: 2
+   MPOS_TC70_ItemCalc: 2
+   MPOS_TC70_ItemScan: 2
+   MPOS_TC70_JCPCardPayment: 2
+   MPOS_TC70_Launch: 2
+   MPOS_TC70_Login: 2
+   MPOS_TC70_OrderAdjusment: 2
+   MPOS_TC70_PLCCCardPayment: 2
+   MPOS_TC70_PointsDeclined: 2
+   MPOS_TC70_Returns_ChangedMind: 2
+   MPOS_TC70_Returns_Defective: 2
+   MPOS_TC70_Returns_ReTicket: 2
+   MPOS_TC70_Returns_SendEmail: 2
+   MPOS_TC70_SendEmail: 2
+   MPOS_TC70_Suspend: 2
+   
+# Test Scenario executed in the test
+scenarioName: RealTime
+
+# Test Scenario ID (ALM test Id) executed in the test
+scenarioId: 463
+
+   
+# Teams integration - Url for senting result to teams
+teamsurl: "https://outlook.office.com/webhook/05471477-dcb2-471c-a1cc-9822508d510b@9c0ac0b9-0217-468a-a432-2649cd6ed297/IncomingWebhook/8e28de98aeb741d39bdea19e5bb47046/cbefd033-23b3-4c05-949c-1b2018f10a52"
+
+# Sent full result to teams or only trnasactions crossed SLA - long/short
+teamsResult: short
+
+# Output file location - Specify the location where the csv formatted output needs to be put in
+fileloc: "\\\\len-file\\atc-pc\\Shared Data Files\\MobilePOS\\Results"
+
+# Temporary file location where the Report html can be downloaded. Note: The contents of the folder will be deleted each time the application is run.
+tempLoc: "\\\\len-file\\atc-pc\\Shared Data Files\\jospaul\\MPOS\\result"
+
+# Log file location
+logLoc: "\\\\len-file\\atc-pc\\Shared Data Files\\MobilePOS\\Logs"
+# Log level is either INFO/DEBUG
+logLevel: INFO
+   
