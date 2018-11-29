@@ -54,5 +54,5 @@ tempLoc: "\\\\len-file\\atc-pc\\Shared Data Files\\jospaul\\MPOS\\result"
 # Log file location
 logLoc: "\\\\len-file\\atc-pc\\Shared Data Files\\MobilePOS\\Logs"
 # Log level is either INFO/DEBUG
-logLevel: DEBUG
+logLevel: INFO
    
