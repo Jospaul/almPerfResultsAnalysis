@@ -11,4 +11,4 @@ set OUTPUTTYPE=tf
 REM Takes a run id if results of a specific run id has to be computed
 set RUNID=1941
 
-python almPerfResultsAnalysis.egg -u %ALMUSERNAME% -p %ALMPASSWORD% -o %OUTPUTTYPE%
+python .\almPerfResultsAnalysis\__main__.py -u %ALMUSERNAME% -p %ALMPASSWORD% -o %OUTPUTTYPE%

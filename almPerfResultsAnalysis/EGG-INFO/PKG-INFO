@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: almPerfResultsAnalysis
+Version: 1.0
+Summary: The application will fetch the html report from alm and creates a csv file and also sends the analysed result to teams
+Home-page: UNKNOWN
+Author: jprakash
+Author-email: jprakash@jcp.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
