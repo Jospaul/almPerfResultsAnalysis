@@ -95,20 +95,25 @@ def createLrAnalyzeReport():
         analysisSummaryReport = almSession.fetchReportHtml(reportId, cnf.tempLoc)
         logger.debug("Fetched the summary report successfully.")
         contentHtml = processHtml(almSession.fetchHtmlFile(cnf.tempLoc, reportId, "contents.html"))
-        analysisTransactionReport = almSession.fetchHtmlFile(cnf.tempLoc, reportId,
+        if not contentHtml:
+            logger.debug("Transactions report was found and file name fetched.")
+            analysisTransactionReport = almSession.fetchHtmlFile(cnf.tempLoc, reportId,
                                                              contentHtml.fetchFileName('Total Transactions per Second'))
-        logger.debug("Fetched the transaction report successfully.")
-        logger.info("Html content of the summary report and transaction report is fetched.")
-        reportData = compileResults(analysisSummaryReport, analysisTransactionReport)
-        print(reportData)
-        if lrAnalyze['outputLoc'] == "file":
-            createResultFile(reportData)
-        elif lrAnalyze['outputLoc'] == "teams":
-            htmObj = generateHtml(reportData)
-            htmObj.postTeams()
-        elif lrAnalyze['outputLoc'] == "tf":
-            Thread(target=createResultFile(reportData)).start()
-            Thread(target=trigHtml(reportData)).start()
+            logger.debug("Fetched the transaction report successfully.")
+            logger.info("Html content of the summary report and transaction report is fetched.")
+            reportData = compileResults(analysisSummaryReport, analysisTransactionReport)
+            print(reportData)
+            if lrAnalyze['outputLoc'] == "file":
+                createResultFile(reportData)
+            elif lrAnalyze['outputLoc'] == "teams":
+                htmObj = generateHtml(reportData)
+                htmObj.postTeams()
+            elif lrAnalyze['outputLoc'] == "tf":
+                Thread(target=createResultFile(reportData)).start()
+                Thread(target=trigHtml(reportData)).start()
+        else:
+            logger.error('Transactions Report was not found. Please check the results.')
+            sys.exit(1)
 
     except IOError:
         logger.error('Error in connection.' + IOError)
