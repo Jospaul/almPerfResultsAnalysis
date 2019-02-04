@@ -94,7 +94,7 @@ def createLrAnalyzeReport():
 
         analysisSummaryReport = almSession.fetchReportHtml(reportId, cnf.tempLoc)
         logger.debug("Fetched the summary report successfully.")
-        analysisTransactionReport = almSession.fetchHtmlFile(cnf.tempLoc, reportId, "Report5.html")
+        analysisTransactionReport = almSession.fetchHtmlFile(cnf.tempLoc, reportId, "Report3.html")
         logger.debug("Fetched the transaction report successfully.")
         logger.info("Html content of the summary report and transaction report is fetched.")
         reportData = compileResults(analysisSummaryReport, analysisTransactionReport)
