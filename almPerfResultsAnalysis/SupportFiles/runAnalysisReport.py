@@ -102,7 +102,6 @@ def createLrAnalyzeReport():
             logger.debug("Fetched the transaction report successfully.")
             logger.info("Html content of the summary report and transaction report is fetched.")
             reportData = compileResults(analysisSummaryReport, analysisTransactionReport)
-            print(reportData)
             if lrAnalyze['outputLoc'] == "file":
                 createResultFile(reportData)
             elif lrAnalyze['outputLoc'] == "teams":
