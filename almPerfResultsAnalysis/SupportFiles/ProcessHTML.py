@@ -5,6 +5,7 @@
 
 from bs4 import BeautifulSoup
 import logging
+from functools import reduce
 
 
 
@@ -71,3 +72,14 @@ class processHtml:
         parsedHtml = self.parseHtml()
         temp = parsedHtml.find(class_="legendTable").findAll(class_="legendRow")
         return temp[1].findAll('td')[4].string
+
+    # Input Arguments: String ( Report name to find)
+    # Output Arguments: Name of the file containing the Report data.
+    # Function: Fetch the file name of the report based on the name from contents in Summary report
+    def fetchFileName(self, ReportName):
+        parsedHtml = self.parseHtml()
+        links = parsedHtml.findAll('a')
+        fetchHref = lambda self, htmlTag: htmlTag if ReportName in str(htmlTag) else '<a>No Value</a>'
+        fileSoup = reduce(fetchHref, links)
+        return fileSoup['href']
+
