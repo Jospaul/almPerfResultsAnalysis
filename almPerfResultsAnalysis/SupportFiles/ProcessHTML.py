@@ -2,6 +2,7 @@
 # Author: Jospaul Mahajan Prakash
 # Company: Infosys Limited
 # Module handles all parsing of the report html file and collecting the transaction information from the report.
+import sys
 
 from bs4 import BeautifulSoup
 import logging
@@ -59,6 +60,9 @@ class processHtml:
         res['avgResponseTime'] = [i.span.string for i in temp]
         temp = parsedHtml.findAll(headers="Lra95 Percent")
         res['95ResponseTime'] = [i.span.string for i in temp]
+        if len(res['95ResponseTime']) < 1:
+            self.logger.error("Check the ALM result template. The html report do not contain 95th percentile values.")
+            raise ValueError('95th percentile not available in html report.')
         temp = parsedHtml.findAll(headers="LraPass")
         res['passVolume'] = [i.span.string for i in temp]
         temp = parsedHtml.findAll(headers="LraFail")
