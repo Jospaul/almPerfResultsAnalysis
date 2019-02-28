@@ -11,8 +11,6 @@ cmd /c "python -m pip install --trusted-host pypi.org --trusted-host files.pytho
 
 cmd /c "python -m pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org datetime"
 
-@echo ON
-
-echo "Python environment setup"
+cmd /c "python -m pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org requests"
 
 exit

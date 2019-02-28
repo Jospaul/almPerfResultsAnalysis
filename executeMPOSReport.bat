@@ -3,7 +3,7 @@ REM Author: Jospaul Mahajan Prakash
 REM Company: Infosys Limited
 
 set ALMUSERNAME=jprakash
-set ALMPASSWORD=Infosys_123
+set ALMPASSWORD=Infosys?123
 
 REM Takes "file" for file only output, "teams" for teams only output and "tf" for both
 set OUTPUTTYPE=tf
