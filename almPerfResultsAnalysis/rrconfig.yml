@@ -31,6 +31,8 @@ transactions:
    MPOS_TC70_Returns_SendEmail: 2
    MPOS_TC70_SendEmail: 2
    MPOS_TC70_Suspend: 2
+   Send_Message: 2
+
    
 # Test Scenario executed in the test
 scenarioName: 
