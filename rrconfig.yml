@@ -31,12 +31,13 @@ transactions:
    MPOS_TC70_Returns_SendEmail: 2
    MPOS_TC70_SendEmail: 2
    MPOS_TC70_Suspend: 2
+   Send_Message: 2
    
 # Test Scenario executed in the test
 scenarioName: 
 
 # Test Scenario ID (ALM test Id) executed in the test
-scenarioId: 482
+scenarioId: 556
 
    
 # Teams integration - Url for senting result to teams
