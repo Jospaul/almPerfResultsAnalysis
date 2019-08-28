@@ -1,5 +1,5 @@
 import logging
-import config as cnf
+import SupportFiles.config as cnf
 from datetime import datetime
 
 
